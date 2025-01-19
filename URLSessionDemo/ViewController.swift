@@ -325,10 +325,12 @@ extension ViewController {
         request.httpMethod = "POST" // GET, POST, PUT, DELETE, PATCH
         request.timeoutInterval = 30 // Seconds
         //cachePolicy:
-            //.useProtocolCachePolicy (default)
+            //.useProtocolCachePolicy
             //.reloadIgnoringLocalCacheData
+            //.reloadIgnoringLocalAndRemoteCacheData
             //.returnCacheDataElseLoad
             //.returnCacheDataDontLoad
+            //.reloadRevalidatingCacheData
         request.cachePolicy = .reloadIgnoringLocalCacheData
         let parameters = ["key": "value"]
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: [])

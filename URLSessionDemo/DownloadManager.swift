@@ -39,6 +39,13 @@ class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate 
         self.url = url
 
         var request = URLRequest(url: url)
+        //cachePolicy:
+            //.useProtocolCachePolicy
+            //.reloadIgnoringLocalCacheData
+            //.reloadIgnoringLocalAndRemoteCacheData
+            //.returnCacheDataElseLoad
+            //.returnCacheDataDontLoad
+            //.reloadRevalidatingCacheData
         request.cachePolicy = .returnCacheDataElseLoad // Use cache if available, else fetch from the server
 
         guard !cacheExist() else {
